@@ -5,14 +5,71 @@
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+				console.log(window.geemails)
+
+
+				//Goal: break object down
+
+				for (i=0;i<window.geemails.length;i++){
+					var message = window.geemails[i];
+					var messageSubj = message.subject;
+					// console.log(messageSubj)
+					var messageSender = message.sender;
+					// console.log(messageSender)
+					var messageBody = message.body;
+					// console.log(messageBody)
+					var messageDate = message.date;
+					// console.log(messageDate)
+
+					var messageElem = document.createElement('div');
+					messageElem.className = 'fullMessage';
+					document.body.appendChild(messageElem);
+					
+					var dateElem = document.createElement('div');
+					dateElem.className = 'date';
+					dateElem.innerHTML = messageDate;
+					messageElem.appendChild(dateElem);
+
+					var subjectElem = document.createElement('div');
+					subjectElem.className = 'subject';
+					subjectElem.innerHTML = 'subject: ' + messageSubj;
+					messageElem.appendChild(subjectElem)
+
+					var senderElem = document.createElement('div');
+					senderElem.className = 'sender';
+					senderElem.innerHTML = 'from: ' + messageSender;
+					messageElem.appendChild(senderElem)
+
+					var bodyElem = document.createElement('div');
+					bodyElem.className = 'body';
+					bodyElem.innerHTML = messageBody;
+					messageElem.appendChild(bodyElem)
+
+
+				}
+
+				
+
+
+				function showMessage(){
+					var showMessages = this.querySelectorAll('.body')[0];
+					if (showMessages.style.display === 'block'){
+						showMessages.style.display = 'none'
+					} else {
+						showMessages.style.display = 'block';
+					}
+				}
+
+				// Goal: get subject into message area
+
+
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
+			<!-- Build Me! -->
 		</div>
 	</body>
 </html>
