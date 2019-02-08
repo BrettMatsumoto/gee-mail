@@ -1,8 +1,9 @@
-.fullMessage{
+.messageHeader{
     border: 1px solid black;
-    margin: 10px; 
-    
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
 }
-.date{
-    text-align: right;
+.messageContent{
+    border: 1px solid red;
 }
