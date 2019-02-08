@@ -13,6 +13,7 @@
 				var pageTitle = document.createElement('title');
 				pageTitle.innerHTML = 'Gee-Mail';
 				document.body.appendChild(pageTitle)
+		
 				//Goal: create Header Box
 
 				var headerBox = document.createElement('h1');
@@ -71,9 +72,24 @@
 					messageElem.appendChild(bodyElem);
 				}
 
+				//Goal: Make and implement event listener to show/hide content
+
+					var contentButton = document.getElementsByClassName('content')
+					for(i=0;i<window.geemails.length;i++){
+					contentButton[i].addEventListener('click', showHide);
+					}
+
+				function showHide(){
+					var contentMessage = this.querySelectorAll('.messageContent')[0]
+					if (contentMessage.style.display === 'none'){
+						contentMessage.style.display = 'block';
+					} else {
+						contentMessage.style.display = 'none';
+					}
+				}
 			
 				
-
+				
       };
 		</script>
 	</head>
