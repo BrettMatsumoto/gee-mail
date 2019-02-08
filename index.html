@@ -58,13 +58,13 @@
 					var contentButton = document.createElement('div');
 					contentButton.className = 'content';
 					contentButton.innerHTML = 'Show/Hide';
-					messageHeader.appendChild(contentButton);
+					document.body.appendChild(contentButton);
 
 					//Goal: add message block and content
 
 					var messageElem = document.createElement('div');
 					messageElem.className = 'messageContent';
-					document.body.appendChild(messageElem);
+					contentButton.appendChild(messageElem);
 
 					var bodyElem = document.createElement('div');
 					bodyElem.className = 'body';
@@ -80,15 +80,19 @@
 					}
 
 				function showHide(){
-					var contentMessage = this.querySelectorAll('.messageContent')[0]
+					var contentMessage = this.querySelectorAll('.messageContent')[0];
 					if (contentMessage.style.display === 'none'){
 						contentMessage.style.display = 'block';
 					} else {
 						contentMessage.style.display = 'none';
 					}
 				}
-			
+
+			//Goal: Create inbox with numbers
 				
+			var inbox = document.createElement('h3');
+			inbox.innerHTML = 'inbox: ' + widow.geemails.length;
+			headerBox.appendChild(inbox)
 				
       };
 		</script>
