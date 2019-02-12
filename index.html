@@ -39,24 +39,24 @@
 
 				var newDateElem = document.createElement('div');
 				newDateElem.className = 'newDate';
-				newDateElem.innerHTML = 'dtg: ' + newDate;
+				newDateElem.innerHTML = 'Date: ' + newDate;
 				newMessageHeader.appendChild(newDateElem);
 
 				var newSendElem = document.createElement('div');
 				newSendElem.className = 'newSend';
-				newSendElem.innerHTML = 'from: ' + newSend;
+				newSendElem.innerHTML = 'From: ' + newSend;
 				newMessageHeader.appendChild(newSendElem);
 
 				var newSubElem = document.createElement('div');
 				newSubElem.className = 'newSub';
-				newSubElem.innerHTML = 'subject: ' + newSub;
+				newSubElem.innerHTML = 'Subject: ' + newSub;
 				newMessageHeader.appendChild(newSubElem);
 				
 				//Goal: add show/hide button
 				
 				var newContentButton = document.createElement('div');
 					newContentButton.className = 'newContent';
-					newContentButton.innerHTML = 'Show/Hide';
+					newContentButton.innerHTML = 'Show';
 					newContentButton.addEventListener('click', showHide2)
 					document.body.appendChild(newContentButton);
 
@@ -70,10 +70,10 @@
 
 					var newBodyElem = document.createElement('div');
 					newBodyElem.className = 'newBody';
-					newBodyElem.innerHTML = 'body: ' + newBod;
+					newBodyElem.innerHTML = 'Body: ' + newBod;
 					newMessageElem.appendChild(newBodyElem);
 
-					inboxCounter.innerHTML = 'inbox: ' + newCount;
+					inboxCounter.innerHTML = 'Inbox: ' + newCount;
 					console.log(newCount)
 					stop();
 				}
@@ -121,24 +121,24 @@
 					
 					var dateElem = document.createElement('div');
 					dateElem.className = 'date';
-					dateElem.innerHTML = 'dtg: ' + messageDate;
+					dateElem.innerHTML = 'Date: ' + messageDate;
 					messageHeader.appendChild(dateElem);
 
 					var senderElem = document.createElement('div');
 					senderElem.className = 'sender';
-					senderElem.innerHTML = 'from: ' + messageSender;
+					senderElem.innerHTML = 'From: ' + messageSender;
 					messageHeader.appendChild(senderElem)
 
 					var subjectElem = document.createElement('div');
 					subjectElem.className = 'subject';
-					subjectElem.innerHTML = 'subject: ' + messageSubj;
+					subjectElem.innerHTML = 'Subject: ' + messageSubj;
 					messageHeader.appendChild(subjectElem)
 
 					//Goal: add show/hide button
 				
 					var contentButton = document.createElement('div');
 					contentButton.className = 'content';
-					contentButton.innerHTML = 'Show/Hide';
+					contentButton.innerHTML = 'Show';
 					document.body.appendChild(contentButton);
 
 					//Goal: add message block and content
@@ -149,7 +149,7 @@
 
 					var bodyElem = document.createElement('div');
 					bodyElem.className = 'body';
-					bodyElem.innerHTML = 'body: ' + messageBody;
+					bodyElem.innerHTML = 'Body: ' + messageBody;
 					messageElem.appendChild(bodyElem);
 				}
 
@@ -160,7 +160,7 @@
 					contentButton[i].addEventListener('click', showHide);
 					}
 
-					
+			
 
 				function showHide(){
 					var contentMessage = this.querySelectorAll('.messageContent')[0];
@@ -170,6 +170,7 @@
 						contentMessage.style.display = 'none';
 					}
 				}
+			
 
 				var newCount = inbox.length;
 				var inboxCounter = document.createElement('h4');
@@ -182,6 +183,9 @@
 		</script>
 	</head>
 	<body>
+		<div id="allMessages"></div>
+
+
 		<div class="container" id="main">
 			<!-- Build Me! -->
 		</div>

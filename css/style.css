@@ -1,26 +1,52 @@
+body{
+    background-color: wheat;
+}
 #header{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    border: 1px solid black;
+    display:block;
+    justify-self: center;
+    background-image: url("http://www.logospng.com/images/6/mail-logo-bing-images-6159.png");
+    background-repeat: no-repeat;
+    background-size: 160px;
+    background-position-x: right;
+    background-position-y: center;
+    background-color: lightblue;
+    border-radius: 20px;
 }
 .messageHeader{
-    border: 1px solid black;
-    margin: 5px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    column-count: 3;
+    column-rule-width: 10px;
     display: flex;
-    justify-content: space-between;
-}
-.messageContent{
-    border: 1px solid red;
-    display: none;
+    background-color: whitesmoke;
 }
 .newHead{
-    border: 1px solid black;
-    margin: 5px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     display: flex;
-    justify-content: space-between;
+    background-color: whitesmoke;
+}
+.content{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    display: block;
+    margin-bottom: 10px;   
+    background-color: whitesmoke;
+}
+.newContent{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    display: block;
+    margin-bottom: 10px;
+    background-color: whitesmoke
+}
+.messageContent{
+    display: none;
 }
 .newMessageContent{
-    border: 1px solid red;
     display: none;
 }
