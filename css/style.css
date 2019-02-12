@@ -1,3 +1,9 @@
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border: 1px solid black;
+}
 .messageHeader{
     border: 1px solid black;
     margin: 5px;

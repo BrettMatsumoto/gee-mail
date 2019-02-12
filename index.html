@@ -21,9 +21,9 @@
 					}
 				}
 				
-				var newCount = inbox.length;
-				var intervalID = setInterval(newMessage, 1000);
-
+				
+				var intervalID = setInterval(newMessage, 5000);
+				
 				
 				function newMessage(){
 				var incoming = getNewMessage();
@@ -32,7 +32,7 @@
 				newSend = incoming.sender
 				newBod = incoming.body;
 				newDate = incoming.date
-
+				
 				var newMessageHeader = document.createElement('div');
 				newMessageHeader.className = 'newHead';
 				document.body.appendChild(newMessageHeader)
@@ -73,10 +73,17 @@
 					newBodyElem.innerHTML = 'body: ' + newBod;
 					newMessageElem.appendChild(newBodyElem);
 
+					inboxCounter.innerHTML = 'inbox: ' + newCount;
+					console.log(newCount)
+					stop();
 				}
 				
+				function stop(){
+					if (newCount > 14){
+						clearInterval(intervalID)
+					}
+				}
 				
-
 				
 
 				// Goal: create page title
@@ -164,13 +171,10 @@
 					}
 				}
 
-
-			//Goal: Create inbox with numbers
-				
-			var inboxCounter = document.createElement('h4');
-			inboxTotal = inbox.length + newCount;
-			inboxCounter.innerHTML = 'inbox: ' + inbox.length;
-			headerBox.appendChild(inboxCounter)
+				var newCount = inbox.length;
+				var inboxCounter = document.createElement('h4');
+					inboxCounter.innerHTML = 'inbox: ' + newCount;
+					headerBox.appendChild(inboxCounter)
 			
 			
 
