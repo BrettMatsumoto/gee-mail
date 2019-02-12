@@ -12,13 +12,60 @@
 
 				//Goal: get setinterval to work.
 				
-				setInterval(newMessage, 1000);
+				var getMess = setInterval(newMessage, 1000);
 
 				function newMessage(){
 				var incoming = getNewMessage();
-				inbox.push(incoming)
+				newSub = incoming.subject
+				newSend = incoming.sender
+				newBod = incoming.body;
+				newDate = incoming.date
+
+				var newMessageHeader = document.createElement('div');
+				newMessageHeader.className = 'newHead';
+				document.body.appendChild(newMessageHeader)
+
+				var newDateElem = document.createElement('div');
+				newDateElem.className = 'newDate';
+				newDateElem.innerHTML = 'dtg: ' + newDate;
+				newMessageHeader.appendChild(newDateElem);
+
+				var newSendElem = document.createElement('div');
+				newSendElem.className = 'newSend';
+				newSendElem.innerHTML = 'from: ' + newSend;
+				newMessageHeader.appendChild(newSendElem);
+
+				var newSubElem = document.createElement('div');
+				newSubElem.className = 'newSub';
+				newSubElem.innerHTML = 'subject: ' + newSub;
+				newMessageHeader.appendChild(newSubElem);
+				
+				//Goal: add show/hide button
+				
+				var newContentButton = document.createElement('div');
+					newContentButton.className = 'newContent';
+					newContentButton.innerHTML = 'Show/Hide';
+					newContentButton.addEventListener('click', showHide2)
+					document.body.appendChild(newContentButton);
+
+					
+
+					//Goal: add message block and content
+
+					var newMessageElem = document.createElement('div');
+					newMessageElem.className = 'newMessageContent';
+					newContentButton.appendChild(newMessageElem);
+
+					var newBodyElem = document.createElement('div');
+					newBodyElem.className = 'newBody';
+					newBodyElem.innerHTML = 'body: ' + newBod;
+					newMessageElem.appendChild(newBodyElem);
+
 				}
-				console.log(inbox)
+				
+				
+
+				
 
 				// Goal: create page title
 
@@ -35,6 +82,8 @@
 
 				//Goal: input message data
 
+				
+				
 				for (i=0;i<inbox.length;i++){
 					var message = inbox[i];
 					// console.log(inbox[i])
@@ -92,12 +141,23 @@
 					contentButton[i].addEventListener('click', showHide);
 					}
 
+					
+
 				function showHide(){
 					var contentMessage = this.querySelectorAll('.messageContent')[0];
 					if (contentMessage.style.display === 'none'){
 						contentMessage.style.display = 'block';
 					} else {
 						contentMessage.style.display = 'none';
+					}
+				}
+
+				function showHide2(){
+					var newContentMessage = this.querySelectorAll('.newMessageContent')[0];
+					if (newContentMessage.style.display === 'none'){
+						newContentMessage.style.display = 'block;';
+					} else {
+						newContentMessage.style.display = 'none';
 					}
 				}
 

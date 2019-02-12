@@ -8,3 +8,13 @@
     border: 1px solid red;
     display: none;
 }
+.newHead{
+    border: 1px solid black;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.newMessageContent{
+    border: 1px solid red;
+    display: block;
+}
