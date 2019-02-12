@@ -16,5 +16,5 @@
 }
 .newMessageContent{
     border: 1px solid red;
-    display: block;
+    display: none;
 }

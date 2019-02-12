@@ -11,6 +11,15 @@
 				// console.log(inbox);
 
 				//Goal: get setinterval to work.
+
+				function showHide2(){
+					var newContentMessage = this.querySelectorAll('.newMessageContent')[0];
+					if (newContentMessage.style.display === 'none'){
+						newContentMessage.style.display = 'block';
+					} else {
+						newContentMessage.style.display = 'none';
+					}
+				}
 				
 				var getMess = setInterval(newMessage, 1000);
 
@@ -152,14 +161,6 @@
 					}
 				}
 
-				function showHide2(){
-					var newContentMessage = this.querySelectorAll('.newMessageContent')[0];
-					if (newContentMessage.style.display === 'none'){
-						newContentMessage.style.display = 'block;';
-					} else {
-						newContentMessage.style.display = 'none';
-					}
-				}
 
 			//Goal: Create inbox with numbers
 				
@@ -167,8 +168,6 @@
 			inboxCounter.innerHTML = 'inbox: ' + inbox.length;
 			headerBox.appendChild(inboxCounter)
 			
-			
-
 			}
 		</script>
 	</head>
