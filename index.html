@@ -21,10 +21,13 @@
 					}
 				}
 				
-				var getMess = setInterval(newMessage, 1000);
+				var newCount = inbox.length;
+				var intervalID = setInterval(newMessage, 1000);
 
+				
 				function newMessage(){
 				var incoming = getNewMessage();
+				newCount++
 				newSub = incoming.subject
 				newSend = incoming.sender
 				newBod = incoming.body;
@@ -165,9 +168,12 @@
 			//Goal: Create inbox with numbers
 				
 			var inboxCounter = document.createElement('h4');
+			inboxTotal = inbox.length + newCount;
 			inboxCounter.innerHTML = 'inbox: ' + inbox.length;
 			headerBox.appendChild(inboxCounter)
 			
+			
+
 			}
 		</script>
 	</head>
