@@ -23,19 +23,17 @@ body{
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
-    display: flex;
-    justify-content: space-evenly;
+    display: block;
     background-color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
-    margin-left: 25%;
+    margin-left: 25%; 
 }
 .newHead{
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
-    display: flex;
-    justify-content: space-evenly;
+    display: block;
     background-color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
@@ -49,7 +47,7 @@ body{
     margin-bottom: 10px;   
     background-color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
-    margin-left: 25%;
+    margin-left: 25%; 
 }
 .newContent{
     border-bottom: 1px solid black;
@@ -59,7 +57,7 @@ body{
     margin-bottom: 10px;
     background-color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
-    margin-left: 25%;
+    margin-left: 25%; 
 }
 .messageContent{
     display: none;
