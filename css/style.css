@@ -7,13 +7,6 @@ body{
     background-position-y: 200px;
     background-attachment: fixed;
 }
-/* #bgImg{
-    height: 350px;
-    width: 350px;
-    background-position-x: 40px;
-    background-position-y: 400px; 
-    position: sticky;
-} */
 #header{
     display:block;
     background-image: url("http://i.imgur.com/v9bw6xj.png");

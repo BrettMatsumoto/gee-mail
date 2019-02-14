@@ -4,13 +4,7 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
 		<script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-
-				var inbox = window.geemails
-				// console.log(inbox);
-
-				//Goal: get setinterval to work.
+				var inbox = window.geemails;
 
 				function showHide2(){
 					var newContentMessage = this.querySelectorAll('.newMessageContent')[0];
@@ -21,10 +15,8 @@
 					}
 				}
 				
-				
 				var intervalID = setInterval(newMessage, 3000);
-				
-				
+								
 				function newMessage(){
 				var incoming = getNewMessage();
 				newCount++
@@ -52,17 +44,11 @@
 				newSubElem.innerHTML = 'Subject: ' + newSub;
 				newMessageHeader.appendChild(newSubElem);
 				
-				//Goal: add show/hide button
-				
 				var newContentButton = document.createElement('div');
 					newContentButton.className = 'newContent';
 					newContentButton.innerHTML = 'Show';
 					newContentButton.addEventListener('click', showHide2)
 					document.body.appendChild(newContentButton);
-
-					
-
-					//Goal: add message block and content
 
 					var newMessageElem = document.createElement('div');
 					newMessageElem.className = 'newMessageContent';
@@ -78,42 +64,21 @@
 					stop();
 				}
 				
-				function stop(){
-					if (newCount > 14){
-						clearInterval(intervalID)
-					}
-				}
-				
-				
-
-				// Goal: create page title
-
 				var pageTitle = document.createElement('title');
 				pageTitle.innerHTML = 'Gee-Mail';
 				document.body.appendChild(pageTitle)
-		
-				//Goal: create Header Box
 
 				var headerBox = document.createElement('h1');
 				headerBox.id = 'header';
 				headerBox.innerHTML = 'Gee-Mail';
-				document.body.appendChild(headerBox)
-
-				//Goal: input message data
-
-				
+				document.body.appendChild(headerBox);		
 				
 				for (i=0;i<inbox.length;i++){
 					var message = inbox[i];
-					// console.log(inbox[i])
 					var messageSubj = message.subject;
-					// console.log(messageSubj)
 					var messageSender = message.sender;
-					// console.log(messageSender)
 					var messageBody = message.body;
-					// console.log(messageBody)
 					var messageDate = message.date;
-					// console.log(messageDate)
 
 					var messageHeader = document.createElement('div');
 					messageHeader.className = 'messageHeader';
@@ -134,14 +99,10 @@
 					subjectElem.innerHTML = 'Subject: ' + messageSubj;
 					messageHeader.appendChild(subjectElem)
 
-					//Goal: add show/hide button
-				
 					var contentButton = document.createElement('div');
 					contentButton.className = 'content';
 					contentButton.innerHTML = 'Show';
 					document.body.appendChild(contentButton);
-
-					//Goal: add message block and content
 
 					var messageElem = document.createElement('div');
 					messageElem.className = 'messageContent';
@@ -153,14 +114,10 @@
 					messageElem.appendChild(bodyElem);
 				}
 
-				//Goal: Make and implement event listener to show/hide content
-
 					var contentButton = document.getElementsByClassName('content')
 					for(i=0;i<inbox.length;i++){
 					contentButton[i].addEventListener('click', showHide);
 					}
-
-			
 
 				function showHide(){
 					var contentMessage = this.querySelectorAll('.messageContent')[0];
@@ -171,25 +128,14 @@
 					}
 				}
 			
-
 				var newCount = inbox.length;
 				var inboxCounter = document.createElement('h4');
 					inboxCounter.innerHTML = 'inbox: ' + newCount;
 					headerBox.appendChild(inboxCounter)
-			
-				// var backgroundImg2 = document.createElement('img');
-				// backgroundImg2.id = 'bgImg';
-				// backgroundImg2.src = 'https://cdn1.iconfinder.com/data/icons/trash-bin-cartoon/512/g10296-512.png';
-				// document.body.appendChild(backgroundImg2);
-
+		
 			}
 		</script>
 	</head>
 	<body>
-
-		<!-- <img src="https://cdn1.iconfinder.com/data/icons/trash-bin-cartoon/512/g10296-512.png" alt="" id="bgImg">
-		<div class="container" id="main"> -->
-			<!-- Build Me! -->
-		</div>
 	</body>
 </html>
